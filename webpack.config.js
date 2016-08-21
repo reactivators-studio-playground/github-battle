@@ -20,4 +20,7 @@ module.exports = {
     ],
   },
   plugins: [HtmlWebpackPluginConfig],
+  devServer: {
+    historyApiFallback: true,
+  },
 };

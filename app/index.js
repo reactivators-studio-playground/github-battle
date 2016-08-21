@@ -2,13 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import FriendsContainer from './components/friends_container';
-
-const App = () => (
-  <FriendsContainer />
-);
+import routes from './config/routes';
 
 ReactDOM.render(
-  <App />,
+  routes,
   document.getElementById('app')
 );
