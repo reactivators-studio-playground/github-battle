@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-import Styles from '../styles';
+import Prompt from '../components/prompt';
 
 type Props = {
   route: {
@@ -30,6 +30,12 @@ class PropmtContainer extends React.Component {
     this.onSubmitUsername = this.onSubmitUsername.bind(this);
   }
 
+  state: {
+    username: string,
+  };
+  onUpdateUsername: Function;
+  onSubmitUsername: Function;
+
   onUpdateUsername(event: Object): void {
     this.setState({
       username: event.target.value,
@@ -37,10 +43,8 @@ class PropmtContainer extends React.Component {
   }
 
   onSubmitUsername(event: Object): void {
-    console.log(this.props, this.context);
-
     event.preventDefault();
-    const username = this.state.username;
+    const username: string = this.state.username;
 
     this.setState({
       username: '',
@@ -64,33 +68,12 @@ class PropmtContainer extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div
-        className="jumbotron col-sm-6 col-sm-offset-3 text-center"
-        style={Styles.transparentBg}
-      >
-        <h1>{this.props.route.header}</h1>
-        <div className="col-sm-12">
-          <form onSubmit={this.onSubmitUsername}>
-            <div className="form-group">
-              <input
-                className="form-control"
-                placeholder="Github Username"
-                type="text"
-                onChange={this.onUpdateUsername}
-                value={this.state.username}
-              />
-            </div>
-            <div className="form-group col-sm-4 col-sm-offset-4">
-              <button
-                className="btn btn-block btn-success"
-                type="submit"
-              >
-                Continue
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
+      <Prompt
+        header={this.props.route.header}
+        username={this.state.username}
+        onSubmitUsername={this.onSubmitUsername}
+        onUpdateUsername={this.onUpdateUsername}
+      />
     );
   }
 }
