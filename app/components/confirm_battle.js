@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 import Styles from '../styles';
+import Main from './main';
 import UserDetails from './user_details';
 import UserDetailsWrapper from './user_details_wrapper';
 
@@ -15,7 +16,7 @@ type Props = {
 export default (props: Props) => (
   props.isLoading
     ? <p>Loading</p>
-    : <div className="jumbotron col-sm-12 text-center" style={Styles.transparentBg}>
+    : <Main>
       <h1>Confirm Players</h1>
       <div className="col-sm-8 col-sm-offset-2">
         <UserDetailsWrapper header={"Player 1"}>
@@ -46,5 +47,5 @@ export default (props: Props) => (
           </Link>
         </div>
       </div>
-    </div>
+    </Main>
 );

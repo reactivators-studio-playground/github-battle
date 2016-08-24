@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 import UserDetails from './user_details';
 import UserDetailsWrapper from './user_details_wrapper';
+import Main from './main';
 import Styles from '../styles';
 
 const StartOver = () => (
@@ -24,10 +25,10 @@ const Results = (props) => {
 
   if (props.scores[0] === props.scores[1]) {
     return (
-      <div className="jumbotron col-sm-12 text-center" style={Styles.transparentBg}>
+      <Main>
         <h1>Draw Game!</h1>
         <StartOver />
-      </div>
+      </Main>
     );
   }
 
@@ -35,7 +36,7 @@ const Results = (props) => {
   const loserIndex = winnerIndex === 0 ? 1 : 0;
 
   return (
-    <div className="jumbotron col-sm-12 text-center" style={Styles.transparentBg}>
+    <Main>
       <h1>Results</h1>
       <div className="col-sm-8 col-sm-offset-2">
         <UserDetailsWrapper header="Winner">
@@ -52,7 +53,7 @@ const Results = (props) => {
         </UserDetailsWrapper>
       </div>
       <StartOver />
-    </div>
+    </Main>
   );
 };
 
