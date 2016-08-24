@@ -44,7 +44,6 @@ class ConfirmBattleContainer extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <ConfirmBattle
         isLoading={this.state.isLoading}

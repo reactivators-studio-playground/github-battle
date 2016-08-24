@@ -12,12 +12,10 @@ type Props = {
   onInitiateBattle: Function,
 }
 
-const puke = (object) => <pre>{(JSON.stringify(object, null, ' '))}</pre>;
-
 export default (props: Props) => (
   props.isLoading
     ? <p>Loading</p>
-    : <div className="jumbtron col-sm-12 text-center" style={Styles.transparentBg}>
+    : <div className="jumbotron col-sm-12 text-center" style={Styles.transparentBg}>
       <h1>Confirm Players</h1>
       <div className="col-sm-8 col-sm-offset-2">
         <UserDetailsWrapper header={"Player 1"}>
