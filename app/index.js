@@ -2,7 +2,14 @@
 import ReactDOM from 'react-dom';
 
 import routes from './config/routes';
+import sentryConfig from './config/sentry_config';
 
+// install sentry
+sentryConfig.install();
+
+windows.fuck();
+
+// render react router to #app
 ReactDOM.render(
   routes,
   document.getElementById('app')
