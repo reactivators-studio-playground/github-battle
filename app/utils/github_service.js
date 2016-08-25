@@ -1,6 +1,8 @@
 // @flow
 import Github from 'github-api';
 
+import ravenLog from './raven_log';
+
 const github: Object = new Github({
 });
 
@@ -17,6 +19,11 @@ const getUsers = (first: string, second: string) => (
       .then(response => response.data)
     )))
     .catch(error => {
+      ravenLog('Failed to fetch users:', {
+        error,
+        first,
+        second,
+      });
       console.warn('Failed to fetch users:', error);
     })
 );
@@ -35,6 +42,10 @@ export const battle = (players: Object[]) => (
           .reduce((stars, repo) => stars + repo.stargazers_count, 0))
     )))
     .catch(error => {
+      ravenLog('Failed to fetch users:', {
+        error,
+        players,
+      });
       console.warn('Failed to get battle results:', error);
     })
 );
