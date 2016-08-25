@@ -18,7 +18,7 @@ export default (
   <Router history={browserHistory}>
     <Route path="/" component={MainContainer}>
       <IndexRoute component={Home} />
-      <Route path="playerOne" header="Player One" component={PromptContainer} />
+      <Route path="playerne" header="Player One" component={PromptContainer} />
       <Route path="playerTwo/:playerOne" header="Player Two" component={PromptContainer} />
       <Route path="battle" component={ConfirmBattleContainer} />
       <Route path="results" component={ResultsContainer} />
