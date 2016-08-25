@@ -18,4 +18,14 @@ const createSentryConfig = (key, app, server = sentryServerUrl) =>
     }
   });
 
-export default createSentryConfig(sentryKey, sentryAppID);
+const configSentry = () => {
+  // setup window on error handler
+  window.onerror = () => {
+    Raven.showReportDialog();
+  };
+
+  // install sentry config
+  createSentryConfig(sentryKey, sentryAppID).install();
+}
+
+export default configSentry;

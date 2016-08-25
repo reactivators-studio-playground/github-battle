@@ -2,10 +2,10 @@
 import ReactDOM from 'react-dom';
 
 import routes from './config/routes';
-import sentryConfig from './config/sentry_config';
+import configSentry from './config/sentry_config';
 
-// install sentry
-sentryConfig.install();
+// config sentry by default
+configSentry();
 
 // render react router to #app
 ReactDOM.render(
