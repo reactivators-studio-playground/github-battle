@@ -2,7 +2,7 @@
 import Github from 'github-api';
 
 const github: Object = new Github({
-  token: '86bdc9c3dec399b3484c21806fc0af231b02b49f',
+  token: 'f51b03126ae42195d1e30ab3f9fd7e802bda331f',
 });
 
 /**

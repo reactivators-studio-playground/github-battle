@@ -6,6 +6,7 @@ import Styles from '../styles';
 import Main from './main';
 import UserDetails from './user_details';
 import UserDetailsWrapper from './user_details_wrapper';
+import Loading from './loading';
 
 type Props = {
   isLoading: boolean,
@@ -15,7 +16,7 @@ type Props = {
 
 export default (props: Props) => (
   props.isLoading
-    ? <p>Loading</p>
+    ? <Loading />
     : <Main>
       <h1>Confirm Players</h1>
       <div className="col-sm-8 col-sm-offset-2">

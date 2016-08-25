@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import UserDetails from './user_details';
 import UserDetailsWrapper from './user_details_wrapper';
 import Main from './main';
+import Loading from './loading';
 import Styles from '../styles';
 
 const StartOver = () => (
@@ -19,7 +20,7 @@ const StartOver = () => (
 const Results = (props) => {
   if (props.isLoading) {
     return (
-      <p>Loading</p>
+      <Loading text="Calculating Results" speed={1000} />
     );
   }
 
